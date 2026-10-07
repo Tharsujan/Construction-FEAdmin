@@ -1,26 +1,56 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #f3efe6;
+  --ink: #1c1914;
+  --clay: #c4511a;
+  --clay-deep: #9a3c12;
+  --hoarding: #1b332c;
+  --moss: #3e5c45;
+  --sand: #e7dfd0;
+  --card: #fbf8f3;
+  --muted: #6d655b;
+  --line: #d8d0c2;
+  --danger: #8f2d2d;
+  color-scheme: light;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-clay: var(--clay);
+  --color-clay-deep: var(--clay-deep);
+  --color-hoarding: var(--hoarding);
+  --color-moss: var(--moss);
+  --color-sand: var(--sand);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-source);
+  --font-display: var(--font-barlow);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+::selection {
+  background: #efd0c2;
+}
+
+:focus-visible {
+  outline: 2px solid var(--clay);
+  outline-offset: 2px;
+}
+
+.hazard-bar {
+  height: 6px;
+  background: repeating-linear-gradient(-45deg, #1b332c 0 8px, #c4511a 8px 16px);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  margin: 0;
 }
